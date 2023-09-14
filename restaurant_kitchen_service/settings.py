@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
+    "crispy_bootstrap4",
     "kitchen",
 ]
 
@@ -56,7 +58,6 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [BASE_DIR / "templates"],
-
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -70,6 +71,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "restaurant_kitchen_service.wsgi.application"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 # Database
@@ -102,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = "kitchen.Cook"
+
+LOGIN_REDIRECT_URL = "/kitchen/"
 
 
 # Internationalization
