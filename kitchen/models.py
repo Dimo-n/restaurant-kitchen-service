@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 from restaurant_kitchen_service import settings
 
@@ -46,6 +47,9 @@ class Dish(models.Model):
         ordering = ["name"]
         verbose_name_plural = "dishes"
 
+    def get_absolute_url(self):
+        return reverse("kitchen:dish-detail", args=[str(self.id)])
+
     def __str__(self):
         return f"{self.name}, {self.price} ({self.dish_type.name})"
 
@@ -55,6 +59,9 @@ class Cook(AbstractUser):
 
     class Meta:
         ordering = ["last_name"]
+
+    def get_absolute_url(self):
+        return reverse("kitchen:cook-detail", args=[str(self.id)])
 
     def __str__(self):
         return f"{self.last_name} {self.first_name} ({self.username})"

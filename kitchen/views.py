@@ -30,6 +30,16 @@ class DishListView(generic.ListView):
     paginate_by = 5
 
 
+class DishDetailView(generic.DetailView):
+    model = Dish
+
+
 class CookListView(generic.ListView):
     model = Cook
     paginate_by = 5
+
+
+class CookDetailView(generic.DetailView):
+    model = Cook
+    queryset = Cook.objects.prefetch_related("dishes")
+    paginate_by = 10

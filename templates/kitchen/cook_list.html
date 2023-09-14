@@ -14,7 +14,9 @@
       {% for cook in cook_list %}
         <tr>
           <td>{{ cook.id }}</td>
-          <td>{{ cook.username }}</td>
+          <td>
+            <a href="{{ cook.get_absolute_url }}">{{ cook.username }}</a>
+          </td>
           <td>{{ cook.years_of_experience }}</td>
           <td>
             <a href="#">update</a>
