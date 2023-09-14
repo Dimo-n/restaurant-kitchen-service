@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Restaurant menu</h1>
+  <p>Glad to see you here!</p>
+  <h3>We offer only delicious and healthy food:</h3>
+  <ul>
+    <li>Number of different dishes: {{ num_dishes }}</li>
+    <li>Number of our cooks: {{ num_cooks }}</li>
+    <li>Types of dishes: {{ num_dish_types }}</li>
+  </ul>
+{% endblock %}
