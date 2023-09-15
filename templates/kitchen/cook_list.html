@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <h1>
+    Cooks
+    <a style="float: right" class="btn btn-primary" href="{% url "kitchen:cook-create" %}">Register new Cook</a>
+  </h1>
+
 	{% if cook_list %}
 		<table class="table">
       <tr>
         <th>ID</th>
         <th>Username</th>
+        <th>Full Name</th>
         <th>Years of experience</th>
-        <th>Update</th>
-        <th>Delete</th>
+
       </tr>
 
       {% for cook in cook_list %}
@@ -17,13 +22,11 @@
           <td>
             <a href="{{ cook.get_absolute_url }}">{{ cook.username }}</a>
           </td>
+          <td>
+            {{ cook.last_name }} {{ cook.first_name }}
+          </td>
           <td>{{ cook.years_of_experience }}</td>
-          <td>
-            <a href="#">update</a>
-          </td>
-          <td>
-            <a href="#">delete</a>
-          </td>
+
         </tr>
 
       {% endfor %}

@@ -1,14 +1,17 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
+  <h1>
+    Dishes
+    <a style="float: right" class="btn btn-primary" href="{% url "kitchen:dish-create" %}">Create</a>
+  </h1>
 	{% if dish_list %}
 		<table class="table">
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Description</th>
         <th>Price</th>
-        <th>Update</th>
-        <th>Delete</th>
       </tr>
 
       {% for dish in dish_list %}
@@ -17,13 +20,8 @@
           <td>
             <a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
           </td>
+          <td>{{ dish.description }}</td>
           <td>{{ dish.price }}</td>
-          <td>
-            <a href="#">update</a>
-          </td>
-          <td>
-            <a href="#">delete</a>
-          </td>
         </tr>
 
       {% endfor %}

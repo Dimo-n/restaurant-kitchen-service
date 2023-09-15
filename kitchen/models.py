@@ -48,7 +48,7 @@ class Dish(models.Model):
         verbose_name_plural = "dishes"
 
     def get_absolute_url(self):
-        return reverse("kitchen:dish-detail", args=[str(self.id)])
+        return reverse("kitchen:dish-detail", kwargs={"pk": self.pk})
 
     def __str__(self):
         return f"{self.name}, {self.price} ({self.dish_type.name})"

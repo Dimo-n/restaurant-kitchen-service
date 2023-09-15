@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Name:
-    <br>
+	<h1>
     <em>{{ cook.last_name }} {{ cook.first_name }}</em>
+
+    <a href="{% url "kitchen:cook-update" pk=cook.id %}" class="btn btn-secondary link-to-page">
+      Update info
+    </a>
   </h1>
   <p><strong>Username:</strong> {{ cook.username }}</p>
   <p><strong>Experience:</strong> {{ cook.years_of_experience }} year{{ cook.years_of_experience|pluralize }}.</p>
