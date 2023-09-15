@@ -6,6 +6,8 @@
     <a style="float: right" class="btn btn-primary" href="{% url "kitchen:cook-create" %}">Register new Cook</a>
   </h1>
 
+  {% include "includes/search_form.html" %}
+
 	{% if cook_list %}
 		<table class="table">
       <tr>

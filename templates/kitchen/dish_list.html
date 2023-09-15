@@ -5,6 +5,9 @@
     Dishes
     <a style="float: right" class="btn btn-primary" href="{% url "kitchen:dish-create" %}">Create</a>
   </h1>
+
+ {% include "includes/search_form.html" %}
+
 	{% if dish_list %}
 		<table class="table">
       <tr>
