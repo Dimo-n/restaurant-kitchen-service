@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>
+    Dishes by filter
+    <a href="javascript:history.go(-1)" class="btn btn-outline-secondary cancel link-to-page">Back to types list</a>
+  </h1>
+  {% if dish_type_filtered %}
+  	{% for dish in dish_type_filtered %}
+      <p>
+        <a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
+      </p>
+  	{% endfor %}
+
+  {% else %}
+    <p>No dishes of this type in menu.</p>
+  {% endif %}
+{% endblock %}

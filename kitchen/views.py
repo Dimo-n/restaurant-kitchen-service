@@ -32,6 +32,16 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
 
 
+class DishTypeFilteredListView(LoginRequiredMixin, generic.ListView):
+    model = DishType
+    template_name = "kitchen/dish_type_filtered.html"
+    context_object_name = "dish_type_filtered"
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Dish.objects.filter(dish_type_id=self.kwargs["pk"])
+
+
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     paginate_by = 5
