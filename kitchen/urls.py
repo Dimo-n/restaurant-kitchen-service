@@ -3,7 +3,7 @@ from django.urls import path
 from kitchen.views import (
     index, DishTypeListView, DishListView, CookListView,
     DishDetailView, CookDetailView, DishCreateView, DishUpdateView, DishDeleteView, CookCreateView, CookUpdateView,
-    DishTypeFilteredListView,
+    DishTypeFilteredListView, CookDeleteView,
 )
 
 urlpatterns = [
@@ -64,6 +64,11 @@ urlpatterns = [
         "cooks/<int:pk>/update/",
         CookUpdateView.as_view(),
         name="cook-update"
+    ),
+    path(
+        "cooks/<int:pk>/delete/",
+        CookDeleteView.as_view(),
+        name="cook-delete"
     ),
 ]
 

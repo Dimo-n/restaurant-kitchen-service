@@ -75,7 +75,7 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
-    fields = "__all__"
+    form_class = DishForm
 
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
@@ -130,3 +130,9 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
     form_class = CookCreationForm
+
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    # template_name = "kitchen/dish_confirm_delete.html"
+    success_url = reverse_lazy("kitchen:cook-list")

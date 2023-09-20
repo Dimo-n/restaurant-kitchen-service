@@ -6,9 +6,7 @@ body {
     float: right;
     margin: 0 2px 0 2px;
 }
+
 .form-inline {
     margin: 10px 0;
-}
-.btn-light {
-    margin: 0 10px;
 }
