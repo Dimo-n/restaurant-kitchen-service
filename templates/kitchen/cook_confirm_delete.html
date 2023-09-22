@@ -1,0 +1,25 @@
+{% extends "base_material.html" %}
+
+{% block content %}
+  {% include "includes/navigation.html" %}
+  <div class="row">
+    <header class="header-2">
+    <div class="page-header min-vh-25 relative" style="background-image: url('{{ ASSETS_ROOT }}/img/bg2.jpg')">
+      <span class="mask bg-gradient-primary opacity-4"></span>
+    </div>
+    </header>
+  </div>
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+    <div class="row" style="margin: 0 auto">
+      <div class="col-sm-12">
+        <h1>Delete Cook?</h1>
+        <form action="" method="post">
+          {% csrf_token %}
+
+          <input type="submit" value="Yes, delete" class="btn btn-danger">
+          <a href="javascript:history.go(-1)" class="btn btn-outline-secondary cancel">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
