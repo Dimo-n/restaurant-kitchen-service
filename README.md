@@ -11,7 +11,6 @@ existing recipes. Also, they can register new cooks and assign them recipes for 
 
 [Kitchen Service project deployed to Render](https://kitchen-service-mate.onrender.com)
 
-For exploring application use these credentials:
 ```
 username: test_user;
 password: pass111word
